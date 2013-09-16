@@ -1,7 +1,7 @@
 class CalendarController < ApplicationController
 
   def calendar
-  	month = params[:month]
+  	@month = params[:month]
     render :calendar 
   end
 
