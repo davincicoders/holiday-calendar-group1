@@ -1,8 +1,8 @@
 <% today.step(in_a_month) do |date| %>
-	<% if date.day != HolidayFields.where(holidate: date.day).first %>
+	<% if date.day != Holiday.where(holidate: date.day).first %>
   	<%= date.day %>
 	<% else %>
 		<%= date.day %><br>
-		<%= HolidayFields.where(holidate: date.day).first.name %>
+		<%= Holiday.where(holidate: date.day).first.name %>
 	<% end %>
 <% end %>
