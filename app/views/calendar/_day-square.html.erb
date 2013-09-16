@@ -1,4 +1,6 @@
-<% today.step(in_a_month) do |date| %>
+<% october_first = Date.new(2013, 10, 1) %>
+
+<% october_first.step(in_a_month) do |date| %>
 	<% if date.day != Holiday.where(holidate: date.day).first %>
   	<%= date.day %>
 	<% else %>
@@ -6,3 +8,10 @@
 		<%= Holiday.where(holidate: date.day).first.name %>
 	<% end %>
 <% end %>
+
+<!--october_first = Date.new(2013, 10, 1)
+if october_first.strftime("%A") != "Sunday"
+	first_sunday = october.advance(days: -2)
+first_monday = first_sunday.advance(days: 1)
+puts first_sunday.strftime("%A, %d")
+puts first_monday.strftime("%A, %d")-->
